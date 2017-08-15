@@ -11,6 +11,11 @@ use Illuminate\Http\Request;
 | is assigned the "api" middleware group. Enjoy building your API!
 |
 */
+
+/*
+ * CREATING POSTS
+ */
+
 Route::post('/quote', [
     'uses' => 'QuoteController@postQuote'
 ]);
@@ -23,3 +28,14 @@ Route::put('/quote/{id}', [
 Route::delete('/quote/{id}', [
     'uses' => 'QuoteController@deleteQuote'
 ]);
+
+/*
+ * REGISTRATION
+ */
+Route::post('/user', [
+    'uses' => 'UserController@signUp'
+]);
+Route::post('/user/signin', [
+    'uses' => 'UserController@signIn'
+]);
+
